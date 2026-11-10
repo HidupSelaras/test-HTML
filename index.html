@@ -68,13 +68,12 @@
 
     <script>
         // --- 1. DATA AFIRMASI & 52 GAMBAR ---
-        // Foto Unsplash mengikuti Unsplash License; foto Pexels mengikuti Pexels License.
-        // Keduanya mengizinkan banyak penggunaan gratis termasuk komersial, dengan batasan masing-masing.
-        // Gratis digunakan tidak berarti public domain. Periksa lisensi sumber sebelum distribusi produk.
         const afirmasiList = [
-            { part1: "Tarik napas perlahan.", part2: "Tidak semua pikiran harus ditindaklanjuti.", img: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=90&w=1440&auto=format&fit=crop" },
+            // GAMBAR 1: Ditukar (Sekarang memakai Hutan Pinus)
+            { part1: "Tarik napas perlahan.", part2: "Tidak semua pikiran harus ditindaklanjuti.", img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=90&w=1440&auto=format&fit=crop" },
             { part1: "Saya memilih merespons dengan tenang,", part2: "bukan bereaksi.", img: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Saya layak mendapatkan pengertian,", part2: "terutama dari diri sendiri.", img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=90&w=1440&auto=format&fit=crop" },
+            // GAMBAR 3: Ditukar (Sekarang memakai Gunung)
+            { part1: "Saya layak mendapatkan pengertian,", part2: "terutama dari diri sendiri.", img: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=90&w=1440&auto=format&fit=crop" },
             { part1: "Saya memilih untuk hadir", part2: "di detik ini saja.", img: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=90&w=1440&auto=format&fit=crop" },
             { part1: "Tubuh saya sedang berusaha melindungi saya,", part2: "bukan menyerang saya.", img: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=90&w=1440&auto=format&fit=crop" },
             { part1: "Hari ini saya memilih untuk", part2: "menunjukkan kasih pada diri sendiri.", img: "https://images.unsplash.com/photo-1439405326854-014607f694d7?q=90&w=1440&auto=format&fit=crop" },
@@ -155,7 +154,7 @@
             document.getElementById('btnGenerate').innerText = "✨ Generate (Tanpa QR)";
         };
 
-        // Load Gambar Unsplash
+        // Load Gambar Unsplash/Pexels
         function loadImage(url) {
             return new Promise((resolve) => {
                 const img = new Image();

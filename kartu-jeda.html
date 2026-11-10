@@ -217,15 +217,17 @@
             // Teks Setup
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
+            
+            // --- UBAH SEMUA WARNA JADI PUTIH SOLID ---
             ctx.fillStyle = "#FFFFFF";
             
-            // Bayangan Teks
+            // Bayangan Teks Dasar
             ctx.shadowColor = "rgba(0,0,0,0.85)";
             ctx.shadowBlur = 15;
             ctx.shadowOffsetX = 0;
             ctx.shadowOffsetY = 5;
 
-            // --- ORNAMEN TERATAI (Dinaikkan ke Y=450) ---
+            // --- ORNAMEN TERATAI ---
             const cx = WIDTH / 2;
             const cy = 450; 
             const scale = 0.8; 
@@ -286,17 +288,26 @@
 
             // 3. Hitung titik mulai (Center Y dipindah ke 750)
             const totalTextHeight = h1 + spacing + h2;
-            const centerY = 750; // <--- DIPINDAH KE ATAS
+            const centerY = 750; 
             
             let startY = centerY - (totalTextHeight / 2) + (h1 / 2);
 
-            // 4. Render
+            // 4. Render Teks 1
             wrapTextWithAutoScale(ctx, text1, WIDTH/2, startY, maxTextWidth, fontSize1, "'Playfair Display', serif", "600", "#FFFFFF", 1.5);
             
+            // 5. Render Teks 2 (Khusus Font 2: Warna Putih + Shadow Lebih Tebal)
+            // Shadow dipertebal agar Alex Brush yang tipis tetap menonjol
+            ctx.shadowBlur = 20; 
+            ctx.shadowOffsetY = 6;
+            
             let y2 = startY + (h1 / 2) + spacing + (h2 / 2);
-            wrapTextWithAutoScale(ctx, text2, WIDTH/2, y2, maxTextWidth, fontSize2, "'Alex Brush', cursive", "400", "#E0F6FF", 1.2);
+            wrapTextWithAutoScale(ctx, text2, WIDTH/2, y2, maxTextWidth, fontSize2, "'Alex Brush', cursive", "400", "#FFFFFF", 1.2);
 
-            // --- DIVIDER & HATI (Otomatis ikut naik) ---
+            // Kembalikan shadow ke pengaturan awal untuk divider
+            ctx.shadowBlur = 15;
+            ctx.shadowOffsetY = 5;
+
+            // --- DIVIDER & HATI ---
             const dividerY = y2 + (h2 / 2) + 80; 
             ctx.beginPath();
             ctx.moveTo(WIDTH/2 - 100, dividerY);
@@ -309,7 +320,7 @@
             ctx.font = "40px Arial";
             ctx.fillText("♥", WIDTH/2, dividerY + 60);
 
-            // --- QR CODE (Tetap di Bawah) ---
+            // --- QR CODE ---
             if (qrLoaded) {
                 const qrSize = 110; 
                 const qrX = (WIDTH - qrSize) / 2; 

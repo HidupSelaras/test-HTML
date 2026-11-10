@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Generator Wallpaper Kartu Jeda - Sejati Store</title>
     
-    <!-- Google Fonts: Playfair Display & Alex Brush -->
+    <!-- Google Fonts: Playfair Display & Dancing Script -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
     
     <!-- Library JSZip & FileSaver untuk Download ZIP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
@@ -218,7 +218,7 @@
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
             
-            // --- UBAH SEMUA WARNA JADI PUTIH SOLID ---
+            // Warna Putih Solid
             ctx.fillStyle = "#FFFFFF";
             
             // Bayangan Teks Dasar
@@ -257,7 +257,7 @@
             const maxTextWidth = WIDTH - 360; 
             
             const fontSize1 = 38; // Playfair Display
-            const fontSize2 = 55; // Alex Brush
+            const fontSize2 = 48; // Dancing Script (Ukuran disesuaikan agar proporsional)
             const spacing = 40;   // Jarak antara teks 1 dan 2
 
             // 1. Hitung tinggi blok teks 1
@@ -274,7 +274,7 @@
             let h1 = tempLines.length * (fontSize1 * 1.5); 
 
             // 2. Hitung tinggi blok teks 2
-            ctx.font = `400 ${fontSize2}px 'Alex Brush', cursive`;
+            ctx.font = `600 ${fontSize2}px 'Dancing Script', cursive`; // Weight 600 untuk Dancing Script
             tempLines = [];
             tempLine = "";
             tempWords = text2.split(' ');
@@ -284,9 +284,9 @@
                 else { tempLine = testLine; }
             }
             tempLines.push(tempLine.trim());
-            let h2 = tempLines.length * (fontSize2 * 1.2);
+            let h2 = tempLines.length * (fontSize2 * 1.3);
 
-            // 3. Hitung titik mulai (Center Y dipindah ke 750)
+            // 3. Hitung titik mulai (Center Y)
             const totalTextHeight = h1 + spacing + h2;
             const centerY = 750; 
             
@@ -295,13 +295,13 @@
             // 4. Render Teks 1
             wrapTextWithAutoScale(ctx, text1, WIDTH/2, startY, maxTextWidth, fontSize1, "'Playfair Display', serif", "600", "#FFFFFF", 1.5);
             
-            // 5. Render Teks 2 (Khusus Font 2: Warna Putih + Shadow Lebih Tebal)
-            // Shadow dipertebal agar Alex Brush yang tipis tetap menonjol
-            ctx.shadowBlur = 20; 
-            ctx.shadowOffsetY = 6;
+            // 5. Render Teks 2 (Dancing Script)
+            // Shadow sedikit lebih tipis karena Dancing Script sudah tebal
+            ctx.shadowBlur = 10; 
+            ctx.shadowOffsetY = 4;
             
             let y2 = startY + (h1 / 2) + spacing + (h2 / 2);
-            wrapTextWithAutoScale(ctx, text2, WIDTH/2, y2, maxTextWidth, fontSize2, "'Alex Brush', cursive", "400", "#FFFFFF", 1.2);
+            wrapTextWithAutoScale(ctx, text2, WIDTH/2, y2, maxTextWidth, fontSize2, "'Dancing Script', cursive", "600", "#FFFFFF", 1.3);
 
             // Kembalikan shadow ke pengaturan awal untuk divider
             ctx.shadowBlur = 15;

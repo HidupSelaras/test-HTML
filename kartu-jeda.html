@@ -67,7 +67,7 @@
     <div class="grid-container" id="previewContainer"></div>
 
     <script>
-        // --- 1. DATA AFIRMASI & 52 GAMBAR (Resolusi Sumber Ditingkatkan ke w=2400) ---
+        // --- 1. DATA AFIRMASI & 52 GAMBAR (URL Resolusi dinaikkan ke w=2400) ---
         const afirmasiList = [
             { part1: "Aku mulai menyadari bahwa hidup bukan sekadar tentang mengejar sesuatu,", part2: "tetapi juga tentang memahami makna dari setiap perjalanan.", img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=90&w=2400&auto=format&fit=crop" },
             { part1: "Semakin aku mengenal diriku, semakin kusadari:", part2: "tak semua arus harus diikuti, dan tak semua hal harus dipercaya.", img: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=90&w=2400&auto=format&fit=crop" },
@@ -192,7 +192,7 @@
             return lines.length * lineHeight; 
         }
 
-        // --- 2. FUNGSI RENDER KARTU (SKALA DIPERBESAR) ---
+        // --- 2. FUNGSI RENDER KARTU (SKALA QHD) ---
         async function drawCard(ctx, text1, text2, bgImg) {
             // Background
             if (bgImg) {
@@ -220,16 +220,16 @@
             ctx.textBaseline = 'middle';
             ctx.fillStyle = "#FFFFFF";
             
-            // Bayangan Teks
+            // Bayangan Teks (Dipertebal untuk QHD)
             ctx.shadowColor = "rgba(0,0,0,0.85)";
-            ctx.shadowBlur = 20; // Dipertebal untuk layar besar
+            ctx.shadowBlur = 20; 
             ctx.shadowOffsetX = 0;
             ctx.shadowOffsetY = 7;
 
             // --- ORNAMEN TERATAI (Skala 1440: 450 -> 600) ---
             const cx = WIDTH / 2;
             const cy = 600; 
-            const scale = 1.1; // Proporsi lebih besar
+            const scale = 1.1; 
             ctx.beginPath();
             ctx.moveTo(cx, cy - 30 * scale);
             ctx.bezierCurveTo(cx - 15 * scale, cy - 10 * scale, cx - 10 * scale, cy + 20 * scale, cx, cy + 30 * scale);
@@ -252,11 +252,11 @@
             ctx.lineWidth = 4;
             ctx.stroke();
 
-            // --- KALKULASI POSISI TEKS (Skala 1440: MaxWidth 480 -> 640) ---
+            // --- KALKULASI POSISI TEKS QHD ---
             const maxTextWidth = WIDTH - 480; 
             
-            const fontSize1 = 50; // Playfair Display (Naik dari 38)
-            const fontSize2 = 64; // Dancing Script (Naik dari 48)
+            const fontSize1 = 50; // Playfair Display (Proporsional QHD)
+            const fontSize2 = 64; // Dancing Script (Proporsional QHD)
             const spacing = 50;   
 
             // 1. Hitung tinggi blok teks 1
@@ -301,7 +301,7 @@
             let y2 = startY + (h1 / 2) + spacing + (h2 / 2);
             wrapTextWithAutoScale(ctx, text2, WIDTH/2, y2, maxTextWidth, fontSize2, "'Dancing Script', cursive", "600", "#FFFFFF", 1.3);
 
-            // Kembalikan shadow ke pengaturan awal
+            // Kembalikan shadow
             ctx.shadowBlur = 20;
             ctx.shadowOffsetY = 7;
 
@@ -318,7 +318,7 @@
             ctx.font = "50px Arial";
             ctx.fillText("♥", WIDTH/2, dividerY + 80);
 
-            // --- QR CODE (Skala 1440: 110 -> 150) ---
+            // --- QR CODE (Skala QHD) ---
             if (qrLoaded) {
                 const qrSize = 150; 
                 const qrX = (WIDTH - qrSize) / 2; 
@@ -363,7 +363,7 @@
             btnPrint.disabled = true;
             container.innerHTML = '';
             generatedCanvases = [];
-            status.innerText = "Mengunduh gambar resolusi tinggi... Mohon tunggu (mungkin sedikit lebih lama).";
+            status.innerText = "Mengunduh gambar resolusi tinggi... Mohon tunggu.";
 
             await document.fonts.ready;
 

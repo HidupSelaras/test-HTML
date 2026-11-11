@@ -67,64 +67,65 @@
     <div class="grid-container" id="previewContainer"></div>
 
     <script>
-        // --- 1. DATA AFIRMASI & 52 GAMBAR ---
+        // --- 1. DATA AFIRMASI & 52 GAMBAR (Resolusi Sumber Ditingkatkan ke w=2400) ---
         const afirmasiList = [
-            { part1: "Aku mulai menyadari bahwa hidup bukan sekadar tentang mengejar sesuatu,", part2: "tetapi juga tentang memahami makna dari setiap perjalanan.", img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Semakin aku mengenal diriku, semakin kusadari:", part2: "tak semua arus harus diikuti, dan tak semua hal harus dipercaya.", img: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku tidak ingin menjalani hidup hanya berdasarkan kebiasaan,", part2: "harapan orang lain, dan tuntutan dunia.", img: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku belajar melihat kehidupan dari sudut pandang yang lebih luas,", part2: "tanpa selalu terjebak dalam pikiranku sendiri.", img: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku terbuka akan kesadaran baru,", part2: "meskipun terkadang hal itu mengubah cara pandangku terhadap kehidupan.", img: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku tidak harus mengetahui semua jawaban", part2: "untuk menyadari bahwa hidup selalu memberiku ruang bertumbuh.", img: "https://images.unsplash.com/photo-1439405326854-014607f694d7?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku berani mengenali perasaanku", part2: "tanpa menyangkal atau menghakimi apa yang sedang kurasakan.", img: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku mulai memahami bahwa beberapa reaksiku hari ini", part2: "mungkin berasal dari pengalaman masa lalu yang belum sepenuhnya kupahami.", img: "https://images.pexels.com/photos/14025853/pexels-photo-14025853.jpeg?cs=srgb&dl=pexels-quang-nguyen-vinh-222549-14025853.jpg&fm=jpg" },
-            { part1: "Aku bertanggung jawab atas tindakanku", part2: "tanpa harus terus menyalahkan diriku sendiri.", img: "https://images.unsplash.com/photo-1501854140801-50d01698950b?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku tidak perlu mengubah jati diriku", part2: "hanya untuk mendapatkan penerimaan orang lain.", img: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku belajar mengenali batasan diri", part2: "dan menghargai kebutuhan emosiku sendiri.", img: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku menerima bahwa mengenal diri adalah perjalanan panjang,", part2: "bukan sesuatu yang harus kuselesaikan dalam sehari.", img: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku ingin benar-benar hadir dalam kehidupan yang sedang kujalani,", part2: "bukan terus-menerus hidup dalam penyesalan dan kekhawatiran.", img: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku belajar menikmati hal-hal sederhana", part2: "yang sering terlewat ketika pikiranku terlalu sibuk.", img: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku tidak harus menyelesaikan semuanya hari ini;", part2: "aku hanya perlu memberikan perhatian terbaik pada apa yang sedang kujalani.", img: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku mengizinkan pikiranku datang dan pergi", part2: "tanpa harus mempercayai atau mengikuti setiap isinya.", img: "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku memberi ruang bagi diriku untuk berhenti sejenak,", part2: "bernapas, dan kembali menyadari keberadaanku.", img: "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku menghargai setiap momen", part2: "karena kehidupan tidak hanya berlangsung di masa depan yang sedang kutuju.", img: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku boleh melangkah maju menggapai mimpi", part2: "tanpa harus melupakan banyak hal yang sudah hadir dalam hidupku.", img: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku belajar melihat nikmat dalam hal-hal sederhana", part2: "yang selama ini sering kuanggap biasa.", img: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku bersyukur tanpa menunggu hidupku sempurna,", part2: "karena selalu ada hal kecil yang layak dihargai.", img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku mulai menyadari betapa banyak kebaikan yang hadir", part2: "tanpa selalu kuminta atau kusadari.", img: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku tidak perlu membandingkan jalanku dengan orang lain", part2: "untuk menghargai kehidupan yang sedang kujalani.", img: "https://images.pexels.com/photos/2892007/pexels-photo-2892007.jpeg?cs=srgb&dl=pexels-tomfisk-2892007.jpg&fm=jpg" },
-            { part1: "Aku ingin menikmati apa yang kumiliki hari ini", part2: "tanpa kehilangan harapan terhadap hari esok.", img: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Semakin aku belajar bersyukur,", part2: "semakin banyak keindahan kehidupan yang mampu kusadari.", img: "https://images.pexels.com/photos/12738715/pexels-photo-12738715.jpeg?auto=compress&cs=tinysrgb&w=1440" },
-            { part1: "Aku tidak melihat keberhasilan orang lain sebagai ancaman,", part2: "karena perjalanan setiap manusia memiliki waktunya masing-masing.", img: "https://images.unsplash.com/photo-1770364360811-58c0fdb88f18?auto=format&fit=crop&fm=jpg&q=90&w=1440" },
-            { part1: "Aku membuka pikiranku terhadap berbagai peluang, kemungkinan", part2: "dan kebaikan yang belum pernah kubayangkan.", img: "https://images.unsplash.com/photo-1760051174042-22cc320e39f0?auto=format&fit=crop&fm=jpg&q=90&w=1440" },
-            { part1: "Aku boleh menginginkan kehidupan yang lebih baik", part2: "tanpa menganggap kehidupan saat ini tidak cukup berharga.", img: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku belajar melihat kekayaan bukan hanya dari materi yang kumiliki,", part2: "tetapi juga dari kesehatan, waktu, pengalaman, hubungan, dan kesempatan.", img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku tidak ingin hidup dalam ketakutan akan kekurangan", part2: "hingga lupa menghargai keberlimpahan yang ada.", img: "https://images.unsplash.com/photo-1766342758582-9e20b297f7b2?auto=format&fit=crop&fm=jpg&q=90&w=1440" },
-            { part1: "Aku mengizinkan diriku menerima kebaikan", part2: "tanpa harus merasa bersalah atau tidak pantas.", img: "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku ingin menjadi bagian dari keberlimpahan kehidupan", part2: "dengan menerima, menghargai, dan membagikan kebaikan.", img: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku melakukan yang terbaik dengan sepenuh hati,", part2: "lalu memberikan ruang bagi hasil untuk berjalan di luar kendaliku.", img: "https://images.unsplash.com/photo-1511884642898-4c92249e20b6?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku bukan menyerah pada kehidupan,", part2: "aku hanya belajar berhenti memaksakan hal-hal di luar kendaliku.", img: "https://images.pexels.com/photos/14569255/pexels-photo-14569255.jpeg?auto=compress&cs=tinysrgb&w=1440" },
-            { part1: "Aku boleh memiliki harapan", part2: "tanpa menjadikan hasilnya sebagai satu-satunya sumber kebahagiaanku.", img: "https://images.pexels.com/photos/8243476/pexels-photo-8243476.jpeg?cs=srgb&dl=pexels-roman-serezhechkin-58865619-8243476.jpg&fm=jpg" },
-            { part1: "Aku melepaskan kebutuhan untuk selalu benar, selalu menang, dan selalu diakui", part2: "karena ketenangan batinku jauh lebih berharga dari semua itu.", img: "https://images.unsplash.com/photo-1735611727780-86641eb78c5d?auto=format&fit=crop&fm=jpg&q=90&w=1440" },
-            { part1: "Aku belajar menerima kenyataan", part2: "tanpa berhenti memperjuangkan hal-hal yang masih bisa kuubah.", img: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku tidak harus membawa semua pengalaman masa lalu", part2: "ke dalam setiap langkah kehidupanku hari ini untuk bertumbuh.", img: "https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku menikmati perjalanan dengan sepenuh hati", part2: "tanpa menggantungkan ketenanganku pada tujuan akhir.", img: "https://images.unsplash.com/photo-1511497584788-876760111969?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku tidak harus berpura-pura baik-baik saja", part2: "ketika sebenarnya sedang membutuhkan waktu untuk memulihkan diri.", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku mengizinkan diriku merasakan kesedihan,", part2: "tanpa menganggapnya sebagai kelemahan.", img: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku belajar memperlakukan diriku dengan kasih sayang", part2: "yang selama ini mungkin terlalu sering kuberikan kepada orang lain.", img: "https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku memaafkan diriku atas hal-hal yang dahulu kulakukan", part2: "ketika belum memiliki pemahaman seperti sekarang.", img: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku berhak menetapkan batasan", part2: "tanpa harus merasa bersalah karena ingin menjaga ketenangan batinku.", img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku tidak harus menyembuhkan semuanya sendirian;", part2: "menerima bantuan juga merupakan bentuk keberanian.", img: "https://images.pexels.com/photos/24366543/pexels-photo-24366543.jpeg?cs=srgb&dl=pexels-sabinefey-24366543.jpg&fm=jpg" },
-            { part1: "Aku memberikan waktu bagi diriku", part2: "untuk bertumbuh tanpa memaksakan proses pemulihan.", img: "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku tidak harus mengendalikan segalanya untuk bisa tenang.", part2: "Fokus pada usaha terbaik, dan biarkan hasilnya mengalir.", img: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku memilih menjalani setiap proses dengan kesungguhan,", part2: "bukan dengan kecemasan berlebihan terhadap hasil.", img: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku belajar menemukan ketenangan bukan dengan menghindari kenyataan,", part2: "tetapi dengan menghadapinya secara sadar.", img: "https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku menerima bahwa kehidupan tidak selalu berjalan sesuai rencanaku,", part2: "dan aku tetap bisa menemukan makna di dalamnya.", img: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku ingin menjalani hidup dengan sepenuh hati,", part2: "menghargai setiap nikmat, dan tidak kehilangan diriku dalam mengejar dunia.", img: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=90&w=1440&auto=format&fit=crop" },
-            { part1: "Aku berusaha sebaik mungkin, menikmati setiap perjalanan, bersyukur atas setiap nikmat,", part2: "dan berserah diri kepada Tuhan atas segala sesuatu yang berada di luar kemampuanku.", img: "https://images.pexels.com/photos/4029596/pexels-photo-4029596.jpeg?auto=compress&cs=tinysrgb&w=1440" }
+            { part1: "Aku mulai menyadari bahwa hidup bukan sekadar tentang mengejar sesuatu,", part2: "tetapi juga tentang memahami makna dari setiap perjalanan.", img: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Semakin aku mengenal diriku, semakin kusadari:", part2: "tak semua arus harus diikuti, dan tak semua hal harus dipercaya.", img: "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku tidak ingin menjalani hidup hanya berdasarkan kebiasaan,", part2: "harapan orang lain, dan tuntutan dunia.", img: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku belajar melihat kehidupan dari sudut pandang yang lebih luas,", part2: "tanpa selalu terjebak dalam pikiranku sendiri.", img: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku terbuka akan kesadaran baru,", part2: "meskipun terkadang hal itu mengubah cara pandangku terhadap kehidupan.", img: "https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku tidak harus mengetahui semua jawaban", part2: "untuk menyadari bahwa hidup selalu memberiku ruang bertumbuh.", img: "https://images.unsplash.com/photo-1439405326854-014607f694d7?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku berani mengenali perasaanku", part2: "tanpa menyangkal atau menghakimi apa yang sedang kurasakan.", img: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku mulai memahami bahwa beberapa reaksiku hari ini", part2: "mungkin berasal dari pengalaman masa lalu yang belum sepenuhnya kupahami.", img: "https://images.pexels.com/photos/14025853/pexels-photo-14025853.jpeg?auto=compress&cs=tinysrgb&w=2400" },
+            { part1: "Aku bertanggung jawab atas tindakanku", part2: "tanpa harus terus menyalahkan diriku sendiri.", img: "https://images.unsplash.com/photo-1501854140801-50d01698950b?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku tidak perlu mengubah jati diriku", part2: "hanya untuk mendapatkan penerimaan orang lain.", img: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku belajar mengenali batasan diri", part2: "dan menghargai kebutuhan emosiku sendiri.", img: "https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku menerima bahwa mengenal diri adalah perjalanan panjang,", part2: "bukan sesuatu yang harus kuselesaikan dalam sehari.", img: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku ingin benar-benar hadir dalam kehidupan yang sedang kujalani,", part2: "bukan terus-menerus hidup dalam penyesalan dan kekhawatiran.", img: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku belajar menikmati hal-hal sederhana", part2: "yang sering terlewat ketika pikiranku terlalu sibuk.", img: "https://images.unsplash.com/photo-1473116763249-2faaef81ccda?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku tidak harus menyelesaikan semuanya hari ini;", part2: "aku hanya perlu memberikan perhatian terbaik pada apa yang sedang kujalani.", img: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku mengizinkan pikiranku datang dan pergi", part2: "tanpa harus mempercayai atau mengikuti setiap isinya.", img: "https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku memberi ruang bagi diriku untuk berhenti sejenak,", part2: "bernapas, dan kembali menyadari keberadaanku.", img: "https://images.unsplash.com/photo-1472396961693-142e6e269027?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku menghargai setiap momen", part2: "karena kehidupan tidak hanya berlangsung di masa depan yang sedang kutuju.", img: "https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku boleh melangkah maju menggapai mimpi", part2: "tanpa harus melupakan banyak hal yang sudah hadir dalam hidupku.", img: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku belajar melihat nikmat dalam hal-hal sederhana", part2: "yang selama ini sering kuanggap biasa.", img: "https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku bersyukur tanpa menunggu hidupku sempurna,", part2: "karena selalu ada hal kecil yang layak dihargai.", img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku mulai menyadari betapa banyak kebaikan yang hadir", part2: "tanpa selalu kuminta atau kusadari.", img: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku tidak perlu membandingkan jalanku dengan orang lain", part2: "untuk menghargai kehidupan yang sedang kujalani.", img: "https://images.pexels.com/photos/2892007/pexels-photo-2892007.jpeg?auto=compress&cs=tinysrgb&w=2400" },
+            { part1: "Aku ingin menikmati apa yang kumiliki hari ini", part2: "tanpa kehilangan harapan terhadap hari esok.", img: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Semakin aku belajar bersyukur,", part2: "semakin banyak keindahan kehidupan yang mampu kusadari.", img: "https://images.pexels.com/photos/12738715/pexels-photo-12738715.jpeg?auto=compress&cs=tinysrgb&w=2400" },
+            { part1: "Aku tidak melihat keberhasilan orang lain sebagai ancaman,", part2: "karena perjalanan setiap manusia memiliki waktunya masing-masing.", img: "https://images.unsplash.com/photo-1770364360811-58c0fdb88f18?auto=format&fit=crop&fm=jpg&q=90&w=2400" },
+            { part1: "Aku membuka pikiranku terhadap berbagai peluang, kemungkinan", part2: "dan kebaikan yang belum pernah kubayangkan.", img: "https://images.unsplash.com/photo-1760051174042-22cc320e39f0?auto=format&fit=crop&fm=jpg&q=90&w=2400" },
+            { part1: "Aku boleh menginginkan kehidupan yang lebih baik", part2: "tanpa menganggap kehidupan saat ini tidak cukup berharga.", img: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku belajar melihat kekayaan bukan hanya dari materi yang kumiliki,", part2: "tetapi juga dari kesehatan, waktu, pengalaman, hubungan, dan kesempatan.", img: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku tidak ingin hidup dalam ketakutan akan kekurangan", part2: "hingga lupa menghargai keberlimpahan yang ada.", img: "https://images.unsplash.com/photo-1766342758582-9e20b297f7b2?auto=format&fit=crop&fm=jpg&q=90&w=2400" },
+            { part1: "Aku mengizinkan diriku menerima kebaikan", part2: "tanpa harus merasa bersalah atau tidak pantas.", img: "https://images.unsplash.com/photo-1470240731273-7821a6eeb6bd?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku ingin menjadi bagian dari keberlimpahan kehidupan", part2: "dengan menerima, menghargai, dan membagikan kebaikan.", img: "https://images.unsplash.com/photo-1505118380757-91f5f5632de0?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku melakukan yang terbaik dengan sepenuh hati,", part2: "lalu memberikan ruang bagi hasil untuk berjalan di luar kendaliku.", img: "https://images.unsplash.com/photo-1511884642898-4c92249e20b6?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku bukan menyerah pada kehidupan,", part2: "aku hanya belajar berhenti memaksakan hal-hal di luar kendaliku.", img: "https://images.pexels.com/photos/14569255/pexels-photo-14569255.jpeg?auto=compress&cs=tinysrgb&w=2400" },
+            { part1: "Aku boleh memiliki harapan", part2: "tanpa menjadikan hasilnya sebagai satu-satunya sumber kebahagiaanku.", img: "https://images.pexels.com/photos/8243476/pexels-photo-8243476.jpeg?auto=compress&cs=tinysrgb&w=2400" },
+            { part1: "Aku melepaskan kebutuhan untuk selalu benar, selalu menang, dan selalu diakui", part2: "karena ketenangan batinku jauh lebih berharga dari semua itu.", img: "https://images.unsplash.com/photo-1735611727780-86641eb78c5d?auto=format&fit=crop&fm=jpg&q=90&w=2400" },
+            { part1: "Aku belajar menerima kenyataan", part2: "tanpa berhenti memperjuangkan hal-hal yang masih bisa kuubah.", img: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku tidak harus membawa semua pengalaman masa lalu", part2: "ke dalam setiap langkah kehidupanku hari ini untuk bertumbuh.", img: "https://images.unsplash.com/photo-1506260408121-e353d10b87c7?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku menikmati perjalanan dengan sepenuh hati", part2: "tanpa menggantungkan ketenanganku pada tujuan akhir.", img: "https://images.unsplash.com/photo-1511497584788-876760111969?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku tidak harus berpura-pura baik-baik saja", part2: "ketika sebenarnya sedang membutuhkan waktu untuk memulihkan diri.", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku mengizinkan diriku merasakan kesedihan,", part2: "tanpa menganggapnya sebagai kelemahan.", img: "https://images.unsplash.com/photo-1448375240586-882707db888b?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku belajar memperlakukan diriku dengan kasih sayang", part2: "yang selama ini mungkin terlalu sering kuberikan kepada orang lain.", img: "https://images.unsplash.com/photo-1518098268026-4e89f1a2cd8e?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku memaafkan diriku atas hal-hal yang dahulu kulakukan", part2: "ketika belum memiliki pemahaman seperti sekarang.", img: "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku berhak menetapkan batasan", part2: "tanpa harus merasa bersalah karena ingin menjaga ketenangan batinku.", img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku tidak harus menyembuhkan semuanya sendirian;", part2: "menerima bantuan juga merupakan bentuk keberanian.", img: "https://images.pexels.com/photos/24366543/pexels-photo-24366543.jpeg?auto=compress&cs=tinysrgb&w=2400" },
+            { part1: "Aku memberikan waktu bagi diriku", part2: "untuk bertumbuh tanpa memaksakan proses pemulihan.", img: "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku tidak harus mengendalikan segalanya untuk bisa tenang.", part2: "Fokus pada usaha terbaik, dan biarkan hasilnya mengalir.", img: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku memilih menjalani setiap proses dengan kesungguhan,", part2: "bukan dengan kecemasan berlebihan terhadap hasil.", img: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku belajar menemukan ketenangan bukan dengan menghindari kenyataan,", part2: "tetapi dengan menghadapinya secara sadar.", img: "https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku menerima bahwa kehidupan tidak selalu berjalan sesuai rencanaku,", part2: "dan aku tetap bisa menemukan makna di dalamnya.", img: "https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku ingin menjalani hidup dengan sepenuh hati,", part2: "menghargai setiap nikmat, dan tidak kehilangan diriku dalam mengejar dunia.", img: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=90&w=2400&auto=format&fit=crop" },
+            { part1: "Aku berusaha sebaik mungkin, menikmati setiap perjalanan, bersyukur atas setiap nikmat,", part2: "dan berserah diri kepada Tuhan atas segala sesuatu yang berada di luar kemampuanku.", img: "https://images.pexels.com/photos/4029596/pexels-photo-4029596.jpeg?auto=compress&cs=tinysrgb&w=2400" }
         ];
 
-        const WIDTH = 1080;
-        const HEIGHT = 2400;
+        // --- RESOLUSI KANVAS DIPERBESAR (1440 x 3200) ---
+        const WIDTH = 1440;
+        const HEIGHT = 3200;
         
         let generatedCanvases = [];
         let qrLoaded = false;
@@ -191,7 +192,7 @@
             return lines.length * lineHeight; 
         }
 
-        // --- 2. FUNGSI RENDER KARTU ---
+        // --- 2. FUNGSI RENDER KARTU (SKALA DIPERBESAR) ---
         async function drawCard(ctx, text1, text2, bgImg) {
             // Background
             if (bgImg) {
@@ -217,20 +218,18 @@
             // Teks Setup
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            
-            // Warna Putih Solid
             ctx.fillStyle = "#FFFFFF";
             
-            // Bayangan Teks Dasar
+            // Bayangan Teks
             ctx.shadowColor = "rgba(0,0,0,0.85)";
-            ctx.shadowBlur = 15;
+            ctx.shadowBlur = 20; // Dipertebal untuk layar besar
             ctx.shadowOffsetX = 0;
-            ctx.shadowOffsetY = 5;
+            ctx.shadowOffsetY = 7;
 
-            // --- ORNAMEN TERATAI ---
+            // --- ORNAMEN TERATAI (Skala 1440: 450 -> 600) ---
             const cx = WIDTH / 2;
-            const cy = 450; 
-            const scale = 0.8; 
+            const cy = 600; 
+            const scale = 1.1; // Proporsi lebih besar
             ctx.beginPath();
             ctx.moveTo(cx, cy - 30 * scale);
             ctx.bezierCurveTo(cx - 15 * scale, cy - 10 * scale, cx - 10 * scale, cy + 20 * scale, cx, cy + 30 * scale);
@@ -250,15 +249,15 @@
             ctx.moveTo(cx - 40 * scale, cy + 25 * scale);
             ctx.quadraticCurveTo(cx, cy + 50 * scale, cx + 40 * scale, cy + 25 * scale);
             ctx.strokeStyle = "rgba(255,255,255,0.9)";
-            ctx.lineWidth = 3;
+            ctx.lineWidth = 4;
             ctx.stroke();
 
-            // --- KALKULASI POSISI TEKS DI TENGAH ---
-            const maxTextWidth = WIDTH - 360; 
+            // --- KALKULASI POSISI TEKS (Skala 1440: MaxWidth 480 -> 640) ---
+            const maxTextWidth = WIDTH - 480; 
             
-            const fontSize1 = 38; // Playfair Display
-            const fontSize2 = 48; // Dancing Script (Ukuran disesuaikan agar proporsional)
-            const spacing = 40;   // Jarak antara teks 1 dan 2
+            const fontSize1 = 50; // Playfair Display (Naik dari 38)
+            const fontSize2 = 64; // Dancing Script (Naik dari 48)
+            const spacing = 50;   
 
             // 1. Hitung tinggi blok teks 1
             ctx.font = `600 ${fontSize1}px 'Playfair Display', serif`;
@@ -274,7 +273,7 @@
             let h1 = tempLines.length * (fontSize1 * 1.5); 
 
             // 2. Hitung tinggi blok teks 2
-            ctx.font = `600 ${fontSize2}px 'Dancing Script', cursive`; // Weight 600 untuk Dancing Script
+            ctx.font = `600 ${fontSize2}px 'Dancing Script', cursive`;
             tempLines = [];
             tempLine = "";
             tempWords = text2.split(' ');
@@ -286,52 +285,51 @@
             tempLines.push(tempLine.trim());
             let h2 = tempLines.length * (fontSize2 * 1.3);
 
-            // 3. Hitung titik mulai (Center Y)
+            // 3. Titik mulai (Skala 1440: 750 -> 1000)
             const totalTextHeight = h1 + spacing + h2;
-            const centerY = 750; 
+            const centerY = 1000; 
             
             let startY = centerY - (totalTextHeight / 2) + (h1 / 2);
 
             // 4. Render Teks 1
             wrapTextWithAutoScale(ctx, text1, WIDTH/2, startY, maxTextWidth, fontSize1, "'Playfair Display', serif", "600", "#FFFFFF", 1.5);
             
-            // 5. Render Teks 2 (Dancing Script)
-            // Shadow sedikit lebih tipis karena Dancing Script sudah tebal
-            ctx.shadowBlur = 10; 
-            ctx.shadowOffsetY = 4;
+            // 5. Render Teks 2
+            ctx.shadowBlur = 15; 
+            ctx.shadowOffsetY = 5;
             
             let y2 = startY + (h1 / 2) + spacing + (h2 / 2);
             wrapTextWithAutoScale(ctx, text2, WIDTH/2, y2, maxTextWidth, fontSize2, "'Dancing Script', cursive", "600", "#FFFFFF", 1.3);
 
-            // Kembalikan shadow ke pengaturan awal untuk divider
-            ctx.shadowBlur = 15;
-            ctx.shadowOffsetY = 5;
+            // Kembalikan shadow ke pengaturan awal
+            ctx.shadowBlur = 20;
+            ctx.shadowOffsetY = 7;
 
             // --- DIVIDER & HATI ---
-            const dividerY = y2 + (h2 / 2) + 80; 
+            const dividerY = y2 + (h2 / 2) + 110; 
             ctx.beginPath();
-            ctx.moveTo(WIDTH/2 - 100, dividerY);
-            ctx.lineTo(WIDTH/2 + 100, dividerY);
+            ctx.moveTo(WIDTH/2 - 130, dividerY);
+            ctx.lineTo(WIDTH/2 + 130, dividerY);
             ctx.strokeStyle = "rgba(255,255,255,0.6)";
-            ctx.lineWidth = 2;
+            ctx.lineWidth = 3;
             ctx.stroke();
             
             ctx.fillStyle = "#86A38D"; 
-            ctx.font = "40px Arial";
-            ctx.fillText("♥", WIDTH/2, dividerY + 60);
+            ctx.font = "50px Arial";
+            ctx.fillText("♥", WIDTH/2, dividerY + 80);
 
-            // --- QR CODE ---
+            // --- QR CODE (Skala 1440: 110 -> 150) ---
             if (qrLoaded) {
-                const qrSize = 110; 
+                const qrSize = 150; 
                 const qrX = (WIDTH - qrSize) / 2; 
-                const qrY = HEIGHT - 350; 
+                const qrY = HEIGHT - 450; 
                 
                 ctx.shadowBlur = 0;
                 ctx.shadowOffsetY = 0;
                 
                 ctx.fillStyle = "rgba(255,255,255,0.4)";
                 ctx.beginPath();
-                ctx.roundRect(qrX - 10, qrY - 10, qrSize + 20, qrSize + 20, 10);
+                ctx.roundRect(qrX - 15, qrY - 15, qrSize + 30, qrSize + 30, 15);
                 ctx.fill();
 
                 ctx.globalAlpha = 0.8;
@@ -339,12 +337,12 @@
                 
                 ctx.globalAlpha = 0.9;
                 ctx.fillStyle = "#FFFFFF";
-                ctx.font = `italic 400 24px 'Playfair Display', serif`; 
+                ctx.font = `italic 400 30px 'Playfair Display', serif`; 
                 
                 ctx.shadowBlur = 5;
-                ctx.shadowOffsetY = 2;
+                ctx.shadowOffsetY = 3;
                 
-                ctx.fillText("Pindai untuk ruang tenang", WIDTH/2, qrY + qrSize + 40);
+                ctx.fillText("Pindai untuk ruang tenang", WIDTH/2, qrY + qrSize + 50);
                 
                 ctx.globalAlpha = 1.0;
                 ctx.shadowBlur = 0;
@@ -365,7 +363,7 @@
             btnPrint.disabled = true;
             container.innerHTML = '';
             generatedCanvases = [];
-            status.innerText = "Mengunduh gambar background... Mohon tunggu.";
+            status.innerText = "Mengunduh gambar resolusi tinggi... Mohon tunggu (mungkin sedikit lebih lama).";
 
             await document.fonts.ready;
 
@@ -425,7 +423,7 @@
             const status = document.getElementById('status');
             
             btnZip.disabled = true;
-            status.innerText = "Membuat file ZIP... (Proses memakan waktu 10-30 detik, mohon tunggu)";
+            status.innerText = "Membuat file ZIP Resolusi Tinggi... (Proses memakan waktu 30-60 detik, mohon tunggu)";
 
             const zip = new JSZip();
             const folder = zip.folder("Kartu-Jeda-Sejati");
@@ -442,8 +440,8 @@
 
             status.innerText = "Menyelesaikan ZIP...";
             zip.generateAsync({ type: "blob" }).then(function(content) {
-                saveAs(content, "Kartu-Jeda-Lengkap.zip");
-                status.innerText = "Berhasil! File ZIP telah diunduh ke folder Download.";
+                saveAs(content, "Kartu-Jeda-Lengkap-QHD.zip");
+                status.innerText = "Berhasil! File ZIP QHD telah diunduh.";
                 btnZip.disabled = false;
             });
         }
